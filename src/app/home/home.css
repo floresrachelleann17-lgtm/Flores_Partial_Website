@@ -391,9 +391,9 @@
 }
 
 
-.exp-card.stay::before { background-image: url('/images/accommodations.jpg'); }
-.exp-card.activity::before { background-image: url('/images/activities.jpg'); }
-.exp-card.food::before { background-image: url('/images/cuisine.jpg'); }
+.exp-card.stay::before { background-image: url('/Flores_Partial_Website/images/accommodations.jpg'); }
+.exp-card.activity::before { background-image: url('/Flores_Partial_Website/images/activities.jpg'); }
+.exp-card.food::before { background-image: url('/Flores_Partial_Website/images/cuisine.jpg'); }
 
 .exp-card:hover {
     transform: translateY(-15px) scale(1.02);
