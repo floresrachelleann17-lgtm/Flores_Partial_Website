@@ -64,7 +64,7 @@
     </ng-container>
 
     <ng-container *ngIf="authService.isLoggedIn()">
-      <a (click)="authService.isLoggedIn() ? router.navigate(['/dashboard']) : null" 
+      <a (click)="authService.isLoggedIn() ? router.navigate(['dashboard']) : null" 
    routerLink="dashboard" 
    class="dashboard-nav-btn" 
    style="cursor: pointer;">
