@@ -3,40 +3,26 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  // This is the function the error is complaining about!
+  private readonly USERNAME = 'elle';
+  private readonly PASSWORD = '12345';
+
+  login(name: string, pass: string): boolean {
+    if (name === this.USERNAME && pass === this.PASSWORD) {
+      localStorage.setItem('currentUser', name);
+      return true;
+    }
+    return false;
+  }
+
   isLoggedIn(): boolean {
-    // It returns true if there is a 'currentUser' in storage
     return localStorage.getItem('currentUser') !== null;
   }
 
-  validate(name: string): boolean {
-
-    const saved = localStorage.getItem('registeredUser');
-
-    return saved === name.toLowerCase();
-
-  }
-
-  login(name: string) {
-
-    localStorage.setItem('currentUser', name.toLowerCase());
-
-  }
   getCurrentUser(): string | null {
-
     return localStorage.getItem('currentUser');
-
   }
 
   logout() {
-
     localStorage.removeItem('currentUser');
-
   }
-  register(name: string) {
-
-    localStorage.setItem('registeredUser', name.toLowerCase());
-
-  }
-
 }

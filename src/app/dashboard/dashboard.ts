@@ -1,23 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router'; 
-import { AuthService } from '../auth'; 
+import { RouterLink, Router } from '@angular/router';
+import { AuthService } from '../auth';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterLink], 
+  imports: [CommonModule, RouterLink],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  styleUrls: ['./dashboard.css']
 })
 export class DashboardComponent implements OnInit {
-  userName: string | null = '';
-  wishlistItems: any[] = []; 
 
-  constructor(public authService: AuthService) {}
+  userName: string | null = '';
+  wishlistItems: any[] = [];
+
+  constructor(
+    public authService: AuthService,
+    private router: Router   // ✅ FIX: inject router
+  ) {}
 
   ngOnInit() {
     this.userName = this.authService.getCurrentUser();
-    this.wishlistItems = []; // Keep empty for the lonely wishlist view
+    this.wishlistItems = [];
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/home']); // ✅ now works
   }
 }

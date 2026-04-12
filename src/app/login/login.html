@@ -2,58 +2,102 @@
   <div class="login-bg"></div>
 
   <div class="login-box">
+
+    <!-- HEADER -->
     <div class="form-header">
       <h2 class="logo">🏝️Palawan<span>Bliss</span></h2>
       <p>Start your journey to paradise</p>
     </div>
 
+    <!-- GUEST OPTION -->
     <div class="guest-option">
       <p>Just looking around?</p>
-      <button class="btn-guest" routerLink="/home">Continue as Guest</button>
+      <button class="btn-guest" routerLink="/home">
+        Continue as Guest
+      </button>
     </div>
 
-    <div class="tab-group">
-      <button class="tab" [class.active]="isLogin" (click)="isLogin = true">Login</button>
-      <button class="tab" [class.active]="!isLogin" (click)="isLogin = false">Sign Up</button>
-    </div>
-
+    <!-- LOGIN FORM -->
     <form *ngIf="isLogin" class="auth-form" (submit)="$event.preventDefault()">
+
       <div class="input-group">
         <i class="fa-solid fa-user"></i>
         <input #loginUser type="text" placeholder="Username" required>
       </div>
+
       <div class="input-group">
         <i class="fa-solid fa-lock"></i>
         <input #loginPass type="password" placeholder="Password" required>
       </div>
-      <button type="submit" class="btn-primary" (click)="onLogin(loginUser, loginPass)">Log In</button>
-      <a href="#" class="forgot-link"><u>Forgot Password?</u></a>
+
+      <button
+        type="submit"
+        class="btn-primary"
+        (click)="onLogin(loginUser, loginPass)">
+        Log In
+      </button>
+
+      <!-- INFO TEXT -->
+      <p style="margin-top: 10px; font-size: 12px; color: #aaa;">
+        Demo login: <b>elle</b> / <b>12345</b>
+      </p>
+
     </form>
 
-    <form *ngIf="!isLogin" class="auth-form" (submit)="$event.preventDefault()">
+    <!-- SIGNUP (DISABLED FOR STATIC LOGIN) -->
+    <form *ngIf="!isLogin" class="auth-form">
+
       <div class="input-group">
         <i class="fa-solid fa-user"></i>
-        <input #signupUser type="text" placeholder="Username" required>
+        <input type="text" placeholder="Disabled" disabled>
       </div>
+
       <div class="input-group">
         <i class="fa-solid fa-envelope"></i>
-        <input type="email" placeholder="Email Address" required>
+        <input type="email" placeholder="Disabled" disabled>
       </div>
+
       <div class="input-group">
         <i class="fa-solid fa-lock"></i>
-        <input #signupPass type="password" placeholder="Create Password" required>
+        <input type="password" placeholder="Disabled" disabled>
       </div>
-      <button type="submit" class="btn-primary" (click)="onSignUp(signupUser, signupPass)">Create Account</button>
+
+      <button class="btn-primary" disabled>
+        Sign Up Disabled
+      </button>
+
     </form>
 
+    <!-- TOGGLE -->
+    <div class="tab-group">
+      <button class="tab" [class.active]="isLogin" (click)="isLogin = true">
+        Login
+      </button>
+
+      <button class="tab" [class.active]="!isLogin" (click)="isLogin = false">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- SOCIAL LOGIN -->
     <div class="social-login">
       <p>Or continue with</p>
+
       <div class="social-icons">
-        <button class="social-btn" routerLink="/"><i class="fa-brands fa-google"></i></button>
-        <button class="social-btn" routerLink="/"><i class="fa-brands fa-facebook"></i></button>
+        <button class="social-btn" routerLink="/">
+          <i class="fa-brands fa-google"></i>
+        </button>
+
+        <button class="social-btn" routerLink="/">
+          <i class="fa-brands fa-facebook"></i>
+        </button>
       </div>
     </div>
-    
-    <button class="back-home" routerLink="/">← Back to Landing Page</button>
+
+    <!-- BACK BUTTON -->
+    <button class="back-home" routerLink="/">
+      ← Back to Landing Page
+    </button>
+
   </div>
 </div>
