@@ -17,18 +17,18 @@ export class ElnidoComponent implements OnInit { // Add "implements OnInit"
   }
   // 6 Destinations (3 per row)
   elNidoSpots = [
-    { id: 'snake-island', name: 'Snake Island', category: 'Sandbars & Views', image: '/images/snake.jpg' },
-    { id: 'las-cabanas', name: 'Las Cabanas', category: 'Beaches & Zipline', image: '/images/las_cabanas.jpg' },
-    { id: 'big-lagoon', name: 'Big Lagoon', category: 'Bodies of Water', image: '/images/big_lagoon.jpg' },
-    { id: 'small-lagoon', name: 'Small Lagoon', category: 'Bodies of Water', image: '/images/small_lagoon.jpg' },
-    { id: 'hidden-beach', name: 'Hidden Beach', category: 'Coves & Snorkeling', image: '/images/hidden_beach.jpg' },
-    { id: 'taraw-cliff', name: 'Taraw Cliff', category: 'Hiking & Adventure', image: '/images/taraw_cliff.jpg' }
+    { id: 'snake-island', name: 'Snake Island', category: 'Sandbars & Views', image: '/Flores_Partial_Website/images/snake.jpg' },
+    { id: 'las-cabanas', name: 'Las Cabanas', category: 'Beaches & Zipline', image: '/Flores_Partial_Website/images/las_cabanas.jpg' },
+    { id: 'big-lagoon', name: 'Big Lagoon', category: 'Bodies of Water', image: '/Flores_Partial_Website/images/big_lagoon.jpg' },
+    { id: 'small-lagoon', name: 'Small Lagoon', category: 'Bodies of Water', image: '/Flores_Partial_Website/images/small_lagoon.jpg' },
+    { id: 'hidden-beach', name: 'Hidden Beach', category: 'Coves & Snorkeling', image: '/Flores_Partial_Website/images/hidden_beach.jpg' },
+    { id: 'taraw-cliff', name: 'Taraw Cliff', category: 'Hiking & Adventure', image: '/Flores_Partial_Website/images/taraw_cliff.jpg' }
   ];
 
   // 3 Accommodations (1 row)
   accommodations = [
-    { id: 'funny-lion', name: 'The Funny Lion', location: 'El Nido Town', image: '/images/funny_lion.jpg' },
-    { id: 'nacpan-glamping', name: 'Nacpan Beach Glamping', location: 'Nacpan Beach', image: '/images/glamping.jpg' },
-    { id: 'miniloc-resort', name: 'Miniloc Island Resort', location: 'Miniloc Island', image: '/images/miniloc.jpg' }
+    { id: 'funny-lion', name: 'The Funny Lion', location: 'El Nido Town', image: '/Flores_Partial_Website/images/funny_lion.jpg' },
+    { id: 'nacpan-glamping', name: 'Nacpan Beach Glamping', location: 'Nacpan Beach', image: '/Flores_Partial_Website/images/glamping.jpg' },
+    { id: 'miniloc-resort', name: 'Miniloc Island Resort', location: 'Miniloc Island', image: '/Flores_Partial_Website/images/miniloc.jpg' }
   ];
 }

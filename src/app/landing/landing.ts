@@ -19,14 +19,14 @@ export class LandingComponent implements OnInit { // Add "implements OnInit"
 
  
   destinations = [
-    { name: 'Snake Island', location: 'El Nido', img: '/images/Snake_Island.jpg' },
-    { name: 'Banol beach', location: 'Coron', img: '/images/banol.jpg' },
-    { name: 'Daluyon Beach', location: 'Puerto Princesa', img: '/images/Daluyon.jpg' },
-    { name: 'Sunset Colors', location: 'Port Barton', img: '/images/sunset_colors.jpg' },
-    { name: 'Underground River', location: 'Puerto Princesa', img: '/images/underground_river.jpg' },
-    { name: 'Forta Santa Isabel', location: 'Taytay', img: '/images/forta_santa_isabel.jpg' },
-    { name: 'Nagtabon Beach', location: 'Puerto Princesa', img: '/images/nagtabon.jpg' },
-    { name: 'Las Cabanas', location: 'El Nido', img: '/images/las_cabanas.jpg' }
+    { name: 'Snake Island', location: 'El Nido', img: '/Flores_Partial_Website/images/Snake_Island.jpg' },
+    { name: 'Banol beach', location: 'Coron', img: '/Flores_Partial_Website/images/banol.jpg' },
+    { name: 'Daluyon Beach', location: 'Puerto Princesa', img: '/Flores_Partial_Website/images/Daluyon.jpg' },
+    { name: 'Sunset Colors', location: 'Port Barton', img: '/Flores_Partial_Website/images/sunset_colors.jpg' },
+    { name: 'Underground River', location: 'Puerto Princesa', img: '/Flores_Partial_Website/images/underground_river.jpg' },
+    { name: 'Forta Santa Isabel', location: 'Taytay', img: '/Flores_Partial_Website/images/forta_santa_isabel.jpg' },
+    { name: 'Nagtabon Beach', location: 'Puerto Princesa', img: '/Flores_Partial_Website/images/nagtabon.jpg' },
+    { name: 'Las Cabanas', location: 'El Nido', img: '/Flores_Partial_Website/images/las_cabanas.jpg' }
   ];
 
   next() {

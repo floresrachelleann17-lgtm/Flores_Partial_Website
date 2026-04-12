@@ -2,7 +2,7 @@
 .dashboard-container {
     min-height: 100vh;
     padding: 80px 20px;
-    background: url('/images/hero.jpg') no-repeat center center fixed;
+    background: url('/Flores_Partial_Website/images/hero.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -1,7 +1,7 @@
 .tips-page {
   min-height: 100vh;
   /* Match your login background exactly */
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hero.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/Flores_Partial_Website/images/hero.jpg') center/cover no-repeat fixed;
   padding: 140px 40px 60px; /* Push content below your absolute navbar */
   color: white;
   font-family: 'Times New Roman', serif;

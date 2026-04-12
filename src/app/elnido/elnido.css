@@ -15,7 +15,7 @@
   bottom: 0;
   
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-              url('/images/elnido.jpg') no-repeat center center/cover;
+              url('/Flores_Partial_Website/images/elnido.jpg') no-repeat center center/cover;
   filter: blur(15px); 
   
   transform: scale(1.1);

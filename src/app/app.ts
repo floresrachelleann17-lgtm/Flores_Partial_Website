@@ -1,5 +1,5 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { RouterOutlet, RouterLink, Router } from '@angular/router'; // 👈 1. Add 'Router' here
+import { RouterOutlet, RouterLink, Router } from '@angular/router'; // Added Router
 import { CommonModule } from '@angular/common'; 
 import { AuthService } from './auth';
 
@@ -12,14 +12,14 @@ import { AuthService } from './auth';
 })
 export class App implements OnInit { 
   
-  // 👈 2. Add 'private router: Router' here
+  // The constructor injects the tools you need (Auth and Router)
   constructor(public authService: AuthService, public router: Router) {} 
 
   ngOnInit() {
     window.scrollTo(0, 0);
   }
 
-  // 👈 3. Add this helper function to force the navigation if the link fails
+  // This function forces the app to go to the dashboard if the HTML link fails
   goToDashboard() {
     this.router.navigate(['/dashboard']);
   }
