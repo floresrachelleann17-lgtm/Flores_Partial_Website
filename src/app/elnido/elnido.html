@@ -1,0 +1,35 @@
+<section class="elnido-container">
+  
+  <h2 class="section-title">El-Nido's Must-Visit Destinations</h2>
+  <div class="grid-layout">
+    <div class="card" *ngFor="let spot of elNidoSpots">
+      <div class="image-wrapper">
+        <img [src]="spot.image" [alt]="spot.name">
+        <button class="heart-btn">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+      </div>
+      <div class="content">
+        <h3>{{spot.name}}</h3>
+        <p class="sub-text">{{spot.category}}</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Top Rated Accommodations</h2>
+  <div class="grid-layout">
+    <div class="card" *ngFor="let stay of accommodations">
+      <div class="image-wrapper">
+        <img [src]="stay.image" [alt]="stay.name">
+        <button class="heart-btn">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+      </div>
+      <div class="content">
+        <h3>{{stay.name}}</h3>
+        <p class="sub-text">{{stay.location}}</p>
+      </div>
+    </div>
+  </div>
+
+</section>

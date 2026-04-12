@@ -1,0 +1,48 @@
+.tips-page {
+  min-height: 100vh;
+  /* Match your login background exactly */
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hero.jpg') center/cover no-repeat fixed;
+  padding: 140px 40px 60px; /* Push content below your absolute navbar */
+  color: white;
+  font-family: 'Times New Roman', serif;
+}
+
+/* The Long Width Box Styling */
+.context-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.context-box {
+  width: 90%;
+  max-width: 1100px;
+  background: rgba(0, 31, 63, 0.7); /* Deep blue tint from your mega-menu */
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.context-box h1 {
+  font-size: 2.5rem;
+  color: #ebe7b5; /* PalawanBliss Gold */
+  margin-bottom: 15px;
+}
+
+.context-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ensure your grid stays below the long box */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

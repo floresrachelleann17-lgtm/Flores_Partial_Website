@@ -1,0 +1,77 @@
+.about-page {
+    min-height: 100vh;
+    background: #000;
+    color: white;
+}
+
+.about-hero {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('/images/home.jpg') center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    font-family: 'Times New Roman', serif;
+    color: #ebe7b5; /* Your gold color */
+}
+
+.about-content-wrapper {
+    max-width: 1200px;
+    margin: -50px auto 0;
+    padding: 0 20px 100px;
+}
+
+.mission-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-side h2 span {
+    color: #00a8a8; /* Your cyan color */
+    font-style: italic;
+}
+
+.image-side img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.values-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.value-card {
+    flex: 1;
+    background: rgba(0, 168, 168, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 168, 168, 0.2);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 168, 168, 0.2);
+}
+
+.value-card i {
+    font-size: 40px;
+    color: #00a8a8;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,26 @@
+<div class="contact-container">
+  <div class="contact-bg"></div>
+
+  <div class="contact-box">
+    <h2>Contact <span>Us</span></h2>
+    <p>Have questions about your Palawan trip? Reach out!</p>
+
+    <div class="input-group">
+      <input #senderName type="text" placeholder="Your Name" required>
+    </div>
+
+    <div class="input-group">
+      <input #senderEmail type="email" placeholder="Email Address" required>
+    </div>
+
+    <div class="input-group">
+      <textarea #senderMsg placeholder="Type your message here..." rows="4"></textarea>
+    </div>
+
+    <button class="btn-primary" (click)="onSendMessage(senderName, senderEmail, senderMsg)">
+      Send Message
+    </button>
+
+    <button class="back-home" routerLink="/home">← Back to Home</button>
+  </div>
+</div>

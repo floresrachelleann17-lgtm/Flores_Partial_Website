@@ -1,0 +1,159 @@
+<section class="hero-section">
+    <div class="hero-bg-layer"></div>
+
+    <div class="hero-content-wrapper">
+        <h1 class="hero-title">Find Your <span><i>Bliss</i></span></h1>
+        <p class="hero-subtitle">Search for a beach or resort in our 5 exclusive locations</p>
+
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Try 'Snake Island' or 'El Nido'..." #searchInput (keyup.enter)="onSearch(searchInput.value)">
+            </div>
+            <button class="btn-explore" (click)="onExplore()">
+                Explore All Locations
+            </button>
+        </div>
+
+        <div class="quick-tags">
+            <span>Popular:</span>
+            <a routerLink="/elnido">El Nido</a>
+            <a routerLink="/login">Coron</a>
+            <a routerLink="/login">Puerto Princesa</a>
+            <a routerLink="/login">Port Barton</a>
+            <a routerLink="/login">Taytay</a>
+        </div>
+    </div>
+</section>
+
+<section id="locations-grid-section" class="locations-section">
+    <h2 class="section-title">Explore the 5 Hearts of Palawan</h2>
+    
+    <div class="locations-grid">
+        <div class="location-card" routerLink="/elnido">
+            <div class="card-img-wrapper">
+                <img src="images/elnido.jpg" alt="El Nido">
+                <div class="atmosphere-tag">Adventurous & Majestic</div>
+            </div>
+            <div class="card-info">
+                <h3>El Nido</h3>
+                <p class="hook">A prehistoric paradise of massive limestone karsts and turquoise lagoons.</p>
+                <div class="reveal-content">
+                    <p class="fun-fact"><b>Did you know?</b> It's home to the Swiftlets whose nests make the famous 'Nido Soup'.</p>
+                    <span class="blue-link-sentence">Explore Hidden Lagoons →</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-card" routerLink="/login">
+            <div class="card-img-wrapper">
+                <img src="images/coron.jpg" alt="Coron">
+                <div class="atmosphere-tag">Mysterious & Rugged</div>
+            </div>
+            <div class="card-info">
+                <h3>Coron</h3>
+                <p class="hook">The ultimate wreck-diving spot with jagged landscapes and crystal inland lakes.</p>
+                <div class="reveal-content">
+                    <p class="fun-fact"><b>Did you know?</b> WWII Japanese shipwrecks are perfectly preserved beneath these waters.</p>
+                    <span class="blue-link-sentence">Explore Dive Sites & Resorts →</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-card" routerLink="/login">
+            <div class="card-img-wrapper">
+                <img src="images/puerto.jpg" alt="Puerto Princesa">
+                <div class="atmosphere-tag">Eco-friendly & Vast</div>
+            </div>
+            <div class="card-info">
+                <h3>Puerto Princesa</h3>
+                <p class="hook">A perfect balance of urban forest and raw, protected natural cave systems.</p>
+                <div class="reveal-content">
+                    <p class="fun-fact"><b>Did you know?</b> The Underground River has a cave room 60 meters high!</p>
+                    <span class="blue-link-sentence">View Cave Tours & City Stays →</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-card" routerLink="/login">
+            <div class="card-img-wrapper">
+                <img src="images/port_barton.jpg" alt="Port Barton">
+                <div class="atmosphere-tag">Bohemian & Raw</div>
+            </div>
+            <div class="card-info">
+                <h3>Port Barton</h3>
+                <p class="hook">The hidden gem for travelers who want to disconnect from the digital world.</p>
+                <div class="reveal-content">
+                    <p class="fun-fact"><b>Did you know?</b> It is a major Sea Turtle Sanctuary—swim with them at German Island!</p>
+                    <span class="blue-link-sentence">Find Quiet Beach Huts →</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-card" routerLink="/login">
+            <div class="card-img-wrapper">
+                <img src="images/taytay.jpg" alt="Taytay">
+                <div class="atmosphere-tag">Historical & Cultural</div>
+            </div>
+            <div class="card-info">
+                <h3>Taytay</h3>
+                <p class="hook">A town where 400 years of Spanish history meet untouched island beauty.</p>
+                <div class="reveal-content">
+                    <p class="fun-fact"><b>Did you know?</b> You can walk on 17th-century stone at the Fuerza de Santa Isabel fort.</p>
+                    <span class="blue-link-sentence">See Historical Sites & Resorts →</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="experience-section">
+    <div class="experience-header">
+        <h2>Tailor Your Experience</h2>
+        <p>Select a location to see the best stays, eats, and adventures.</p>
+        
+        <div class="filter-dropdown">
+            <select (change)="onFilterChange($event)">
+                <option value="all">All of Palawan</option>
+                <option value="el-nido">El Nido</option>
+                <option value="coron">Coron</option>
+                <option value="puerto-princesa">Puerto Princesa</option>
+                <option value="port-barton">Port Barton</option>
+                <option value="taytay">Taytay</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="experience-grid">
+    <div class="exp-card stay">
+        <div class="exp-icon">🏨</div>
+        <h3>Accommodations</h3>
+        <p>From luxury overwater bungalows to eco-friendly beach huts.</p>
+        <button class="btn-view" routerLink="/login">View Stays</button>
+    </div>
+
+    <div class="exp-card activity">
+        <div class="exp-icon">🛶</div>
+        <h3>Island Activities</h3>
+        <p>Kayaking hidden lagoons, wreck diving, and island hopping tours.</p>
+        <button class="btn-view" routerLink="/login">View Tours</button>
+    </div>
+
+    <div class="exp-card food">
+        <div class="exp-icon">🍽️</div>
+        <h3>Foodie Delight</h3>
+        <p>Fresh seafood, traditional Filipino cuisine, and cliffside dining.</p>
+        <button class="btn-view" routerLink="/login">View Dining</button>
+    </div>
+</div>
+</section>
+
+<section class="map-section">
+    <div class="map-header">
+        <h2>Navigate Your Bliss</h2>
+        <p>Explore the 5 Hearts of Palawan across the archipelago.</p>
+    </div>
+
+    <div id="google-map-container" class="map-frame"></div>
+</section>
+

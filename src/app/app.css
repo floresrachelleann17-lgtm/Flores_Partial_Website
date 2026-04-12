@@ -1,0 +1,528 @@
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+/* This ensures Logo is Left, and the Group is Right */
+.navbar {
+    /* Set a specific height */
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 40px;
+    backdrop-filter: blur(8px);
+    position: absolute;
+    top: 0; width: 100%;
+    position: fixed; /* Better than absolute for keeping it visible */
+    z-index: 10000 !important; /* Higher than any hero element */
+    pointer-events: auto !important; /* Force clickability */
+}
+
+/* NEW: This container keeps menu and buttons together on the right */
+.nav-right-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between menu links and the actions area */
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Force this to the front so the click lands */
+    position: relative;
+    z-index: 10001 !important; 
+    pointer-events: auto !important;
+}
+.nav-actions a:hover{
+      transform: scale(1.0) translateY(-3px); 
+    color: #00a8a8; 
+    text-shadow: 0 4px 15px rgba(0, 168, 168, 0.5); 
+}
+
+.wishlist-link i {
+    font-family: "Font Awesome 6 Free" !important; /* Forces the icon font */
+    font-weight: 400; /* Use 400 for regular, 900 for solid */
+    font-size: 20px;
+    color: white; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.wishlist-link i:hover {
+    color: #ff4d4d; /* Turns red on hover */
+    transform: scale(1.1);
+    
+}
+
+/* Rest of your existing CSS... */
+.nav-logo { 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+}
+.nav-logo .bliss { 
+    color: #ebe7b5; 
+}
+.nav-menu ul li{ 
+    position: relative;
+}
+.nav-menu ul li a {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 10px; 
+}
+
+.nav-menu ul li a:hover {
+    transform: scale(1.0) translateY(-3px); 
+    color: #00a8a8; 
+    text-shadow: 0 4px 15px rgba(0, 168, 168, 0.5); 
+}
+
+
+.nav-menu ul li a:active {
+    transform: scale(0.95) translateY(1px);
+}
+
+
+.dropdown-menu li a:hover {
+    transform: scale(1.1) translateX(5px); 
+    color: #ebe7b5 !important;
+    background: transparent !important;
+}
+.nav-menu ul { 
+    list-style: none; 
+    display: flex; gap: 25px; 
+}
+.nav-menu a { 
+    text-decoration: none; 
+    color: white; 
+    transition: 0.3s; 
+}
+.nav-menu a:hover { 
+    color: #00a8a8; 
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.9);
+    min-width: 180px;
+    
+   
+    padding: 5px 0;         
+    display: flex;
+    flex-direction: column;
+    gap: 0;                
+    list-style: none;      
+   
+    
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 100;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    margin: 0;          
+    padding: 0;         
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 5px 20px;    
+    color: white;
+    text-decoration: none;
+    text-align: justify;
+    background: none;    
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+.dropdown-menu li a:hover {
+    background: transparent; 
+    color: #00a8a8;        
+    transform: scale(1.1);  
+    text-shadow: 0 0 8px rgba(0, 168, 168, 0.8);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); 
+}
+
+/* 1. Make the Experience item the anchor point */
+.mega-dropdown {
+    position: static; /* Required for the menu to span the full navbar width if needed, or keep relative for centered */
+}
+/* 2. The Wide Mega Menu Panel */
+.mega-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    /* FIX: Center it relative to the 'Experience' link */
+    left: 0%; 
+    transform: translateX(-50%) translateY(20px); 
+    
+    /* FIX: Prevent it from going off-screen on smaller monitors */
+    width: 95vw; 
+    max-width: 850px; 
+    max-height: 800px;
+    
+    background: rgba(41, 83, 124, 0.9); /* Slightly more opaque for readability */
+    backdrop-filter: blur(40px); 
+    -webkit-backdrop-filter: blur(40px);
+    
+    padding: 30px;
+    display: flex; 
+    gap: 20px;
+    border-radius: 20px;
+    
+    /* CRITICAL: Ensure it is above the Hero and all other content */
+    z-index: 9999 !important; 
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Ensure the hover state matches the new centering */
+.mega-dropdown:hover .mega-menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Update Text Color for Readability on Blue */
+.mega-card h3 {
+    color: #ebe7b5 !important; /* Gold headings */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.mega-card p {
+    color: #ffffff !important; /* Pure white text */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* 4. Individual Mega Cards */
+.mega-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Matches your PPT height ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mega-card:hover img {
+    transform: scale(1.1);
+}
+
+/* 5. See Details Button (Top Right of Image) */
+.see-details {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: #008080;
+    border: none;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.see-details:hover {
+    background: #ebe7b5;
+    color: #111;
+}
+
+/* 6. Typography for the Menu */
+.mega-card h3 {
+    font-size: 17px;
+    color: #ebe7b5;
+    margin-bottom: 8px;
+    font-family: 'Times New Roman', serif;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.mega-card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.login-btn {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    color: #b2ebf2; 
+}
+
+
+.signup-btn {
+    text-decoration: none;
+    background-color: white;
+    color: #008080; 
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.signup-btn:hover {
+    background-color: #b2ebf2;
+    transform: translateY(-2px);
+}
+.dashboard-nav-btn {
+    background-color: #00bcd4;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.main-footer {
+    background: #111;
+    color: white;
+    padding: 30px 40px 15px;
+    border-top: 3px solid #00a8a8;
+}
+
+.footer-united-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+
+.column-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00a8a8; 
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #999;
+    max-width: 320px;
+}
+
+.brand-col {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    margin-top: -10px; 
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 2px; 
+}
+
+.footer-moto {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 15px; 
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.social-links i {
+    font-family: "Font Awesome 6 Brands" !important; 
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 22px;
+    color: white !important; 
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    display: inline-block;
+}
+.social-links i.fa-instagram:hover {
+    color: #E1306C !important;
+    opacity: 1;
+    transform: translateY(-3px) scale(1.1);
+}
+
+
+.social-links i.fa-facebook:hover {
+    color: #1877F2 !important;
+    opacity: 1;
+    transform: translateY(-3px) scale(1.1);
+}
+
+
+.social-links i.fa-tiktok:hover {
+    color: #00f2ea !important;
+    opacity: 1;
+    text-shadow: 1px 1px #ff0050; 
+    transform: translateY(-3px) scale(1.1);
+}
+
+.partners-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.partners-title {
+    color: #999;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    width: 100%; 
+}
+
+.partner-logos-grid {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px; 
+    flex-wrap: wrap;
+}
+
+.partner-logo img {
+    height: 30px; 
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: 0.4s ease;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
+    filter: none;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 8px;
+    text-align: center;
+}
+/* Responsive Header adjustment for smaller screens */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 15px 20px; /* Less padding on sides */
+    }
+
+    .nav-menu ul {
+        gap: 15px; /* Shorter distance between Home, Tours, etc. */
+    }
+
+    .nav-menu ul li a {
+        font-size: 14px; /* Slightly smaller text */
+    }
+
+    .nav-actions {
+        gap: 10px; /* Closer Login/Signup buttons */
+    }
+
+    .signup-btn {
+        padding: 6px 15px; /* Smaller button size */
+    }
+}
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 10px 15px; /* Even tighter padding */
+    }
+
+    .nav-menu ul {
+        gap: 12px; /* Pull links closer together */
+    }
+
+    /* Hide the 'Wishlist' heart on small screens to save space */
+    .wishlist-link {
+        display: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .nav-logo {
+        font-size: 18px;
+    }
+
+    .nav-menu ul li a {
+        font-size: 12px;
+        padding: 5px 2px;
+    }
+
+    /* If it's still too cramped, we stack the cards in the mega menu */
+    .mega-menu {
+        flex-direction: column; 
+        width: 300px; /* Switch to a vertical dropdown on mobile */
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}

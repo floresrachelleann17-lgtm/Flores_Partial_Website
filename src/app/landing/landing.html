@@ -1,0 +1,52 @@
+<section class="hero">
+    <img src="images/hero.jpg" alt="Palawan Hero" class="hero-img">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <i>Discover </i><b>the Paradise</b> <i><span class="of"> of  </span></i> <b> Palawan</b>
+        </h1>
+        <p>Your Ultimate Travel Guide to the Island’s Best Destinations</p>
+       <div class="buttons">
+  <button class="primary" routerLink="/home">Explore as Guest</button>
+  
+  <button class="secondary" routerLink="/home">Login / Sign Up</button>
+</div>
+    </div>
+</section>
+
+<section class="welcome">
+    <h2 class="logo">
+       Welcome to🏝️<i>Palawan<span>Bliss</span></i>
+    </h2>
+    <p>Uncover the stunning beauty of &nbsp;El Nido, Coron, Puerto Princesa, Port Barton, and Taytay.</p><br>
+    <p>Your <i>adventure</i> starts here!</p>
+</section>
+
+<section class="destinations">
+    <h2><i>Top Destinations</i></h2>
+    
+    <div class="cards-container">
+        <button class="nav-arrow left" (click)="prev()">❮</button>
+
+        <div *ngFor="let dest of destinations; let i = index" 
+             class="card" 
+             [ngClass]="getCardClass(i)"
+             routerLink="/login">
+            
+            <img [src]="dest.img" [alt]="dest.name">
+            <h3><i>{{dest.name}}</i> <br>{{dest.location}}</h3>
+        </div>
+
+        <button class="nav-arrow right" (click)="next()">❯</button>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="cta-container">
+        <h2>Plan Your Trip Today!</h2>
+        <p class="subtitle">Get started with the best tips & booking options</p>
+        <div class="buttons">
+            <button class="primary" routerLink="/login">Travel Tips</button>
+            <button class="secondary" routerLink="/login">Book Now</button>
+        </div>
+    </div>
+</section>

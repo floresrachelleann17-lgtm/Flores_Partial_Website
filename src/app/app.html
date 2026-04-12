@@ -1,0 +1,121 @@
+<header class="navbar">
+    <div class="nav-logo" routerLink="/home" style="cursor: pointer;">
+        🏝️<i><span>Palawan<span class="bliss">Bliss</span></span></i>
+    </div>
+
+    <div class="nav-right-group">
+        <nav class="nav-menu">
+            <ul>
+                <li><a routerLink="/home">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">Tours ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/elnido">El Nido</a></li>
+                        <li><a routerLink="/login">Coron</a></li>
+                        <li><a routerLink="/login">Puerto Princesa</a></li>
+                        <li><a routerLink="/login">Port Barton</a></li>
+                        <li><a routerLink="/login">Taytay</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown mega-dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Experience ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-card">
+                            <div class="card-img-wrapper">
+                                <img src="images/accommodations.jpg" alt="Accommodation">
+                                <button class="see-details" routerLink="/experience">See Details</button>
+                            </div>
+                            <h3>Accommodation</h3>
+                            <p>Beach Resort, Hotel or B&B...</p>
+                        </div>
+                        <div class="mega-card">
+                            <div class="card-img-wrapper">
+                                <img src="images/activities.jpg" alt="Outdoor">
+                                <button class="see-details" routerLink="/experience">See Details</button>
+                            </div>
+                            <h3>Island Activities</h3>
+                            <p>Many fun outdoor activities in Palawan.</p>
+                        </div>
+                        <div class="mega-card">
+                            <div class="card-img-wrapper">
+                                <img src="images/cuisine.jpg" alt="Food">
+                                <button class="see-details" routerLink="/experience">See Details</button>
+                            </div>
+                            <h3>Foodie Delight</h3>
+                            <p>A delectable fusion of flavors.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a routerLink="/contact">Contact Us</a></li>
+                <li><a routerLink="/travel-tips">Travel Tips</a></li>
+            </ul>
+        </nav>
+
+       <div class="nav-actions">
+    <a routerLink="/wishlist" class="wishlist-link">
+        <i class="fa-regular fa-heart"></i>
+    </a>
+
+    <ng-container *ngIf="!authService.isLoggedIn()">
+        <a routerLink="/login" class="login-btn">Log In</a>
+        <a routerLink="/login" class="signup-btn">Sign Up</a>
+    </ng-container>
+
+    <ng-container *ngIf="authService.isLoggedIn()">
+      <a (click)="authService.isLoggedIn() ? router.navigate(['/dashboard']) : null" 
+   routerLink="/dashboard" 
+   class="dashboard-nav-btn" 
+   style="cursor: pointer;">
+    👤 My Account
+</a>
+    </ng-container>
+</div>
+    </div>
+   
+</header>
+
+
+<div style="display: block; min-height: 80vh;">
+    <router-outlet></router-outlet>
+</div>
+
+<footer class="main-footer">
+    <div class="footer-united-content">
+        <div class="footer-column about-col">
+            <h4 class="column-title">About Us</h4>
+            <p class="about-text">
+                Dedicated to uncovering the hidden gems of the Philippines' last frontier. 
+                From the limestone cliffs of El Nido to the shipwrecks of Coron, 
+                we help travelers find their perfect piece of paradise.
+
+                <a routerLink="/about-us" style="color: #00a8a8; text-decoration: underline;">Learn more.</a>
+            </p>
+        </div>
+
+        <div class="footer-column brand-col">
+            <div class="footer-logo">Palawan<span>Bliss</span></div>
+            <p class="footer-moto">Your ultimate guide to the last frontier.</p>
+            <div class="social-links">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+        </div>
+        
+        <div class="footer-column partners-col">
+            <p class="partners-title">---Trusted Partners---</p>
+            <div class="partner-logos-grid">
+                <div class="partner-logo"><img src="images/agoda.png" alt="Agoda"></div>
+                <div class="partner-logo"><img src="images/booking.png" alt="Booking"></div>
+                <div class="partner-logo"><img src="images/airbnb.png" alt="Airbnb"></div>
+                <div class="partner-logo"><img src="images/klook.png" alt="Klook"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 PalawanBliss Travel. All Rights Reserved.
+    </div>
+</footer>

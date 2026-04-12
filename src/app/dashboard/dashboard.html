@@ -1,0 +1,37 @@
+<div class="dashboard-container">
+    
+    <div class="top-spacer"></div>
+
+    <div class="welcome-card">
+        <div class="profile-avatar">
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+
+        <button (click)="authService.logout()" routerLink="/home" class="inner-logout-btn">
+            Logout <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+
+        <div class="welcome-text">
+            <h1>Welcome, <span>{{ userName }}</span>!</h1>
+            <p>Ready for your next adventure in Palawan?</p>
+        </div>
+    </div>
+
+    <div class="glass-panel">
+        <div class="wishlist-header">
+            <h2>Wishlist <span class="heart">❤️</span></h2>
+            <button routerLink="/home" class="add-items-btn">+ Add Items</button>
+        </div>
+
+        <div class="wishlist-content">
+            <div class="empty-prompt-card" *ngIf="wishlistItems.length === 0">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>Your wishlist is looking a bit lonely!</h3>
+                <p>Go to the home page and click the ❤️ on your favorite spots to see them here.</p>
+            </div>
+
+            <div class="category-grid" *ngIf="wishlistItems.length > 0">
+                </div>
+        </div>
+    </div>
+</div>

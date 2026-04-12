@@ -1,0 +1,473 @@
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevents white bars when scaling/hovering */
+}
+
+.hero-bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Combine gradient and image for that dark, cinematic look */
+    background: linear-gradient(rgba(69, 68, 68, 0.2), rgba(76, 74, 74, 0.3)), 
+                url('/images/home.jpg') center/cover no-repeat;
+               
+    z-index: -1; /* Must be negative to stay behind text and navbar */
+    pointer-events: none;
+    transition: transform 0.8s ease;
+    
+    /* Bottom fade to blend with the rest of the page */
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.hero-section:hover .hero-bg-layer {
+    transform: scale(1.05); /* Gentle zoom effect */
+}
+
+.hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* This centers all children horizontally */
+    justify-content: center;
+    text-align: center;
+    /* Login-style Glassmorphism */
+    background: rgba(0, 31, 63, 0.3); /* Deep blue ocean tint */
+    backdrop-filter: blur(2px);
+   
+    
+    padding: 60px 40px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.quick-tags {
+    width: 100%;             /* Ensure it takes full width of the wrapper */
+    display: flex;           /* Use flex for the links inside */
+    flex-wrap: wrap;         /* Allows tags to drop to next line on mobile */
+    justify-content: center; /* This is the key for centering the links */
+    align-items: center;
+    gap: 15px;               /* Clean spacing instead of manual margins */
+    margin-top: 20px;
+}
+
+.quick-tags span {
+    color: white;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.quick-tags a {
+    color: #ebe7b5; 
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+}
+
+.quick-tags a:hover {
+    color: #00a8a8;
+}
+
+.hero-title {
+    font-size: 50px; 
+    margin-bottom: 10px;
+    color: #f4f8ec; 
+}
+.hero-title span {
+    color: #ebe7b5; 
+    text-shadow: 0 0 15px rgba(235, 231, 181, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #ebe7b5; 
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.search-box {
+    background: white;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 450px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    
+    display: flex;
+    align-items: center; 
+    padding: 0 30px; 
+    height: 55px;    
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    background: transparent;
+    
+   
+    margin: 0;
+    padding: 0;
+    line-height: normal; 
+    display: block;
+}
+.btn-explore {
+    background: #00a8a8;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 168, 168, 0.4);
+    transition: 0.3s;
+}
+
+.btn-explore:hover {
+    transform: scale(1.05) translateY(-3px);
+    background: #00c2c2;
+}
+
+
+.quick-tags {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    color: #ebe7b5;
+    text-align: center;
+    text-size-adjust: 19px;
+    font-weight: bold;
+    
+}
+.quick-tags span{
+  text-size-adjust: 19px;
+}
+
+.quick-tags a {
+    text-decoration: none;
+    color: #ebe7b5;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.quick-tags a:hover {
+    color: #00a8a8;
+    transform: translateY(-2px);
+}
+.locations-section {
+    padding: 100px 40px;
+    background: #fdfdfd;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: #333;
+    font-weight: bold;
+}
+
+.locations-grid {
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    
+    
+    max-width: 1050px; 
+    margin: 0 auto; 
+}
+
+.location-card {
+    width: 320px; 
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    margin-bottom: 20px; 
+}
+
+
+.location-card:hover {
+    transform: translateZ(50px) translateY(-15px);
+    box-shadow: 0 40px 80px rgba(0, 168, 168, 0.2);
+    z-index: 10; 
+}
+
+
+.location-card {
+    width: 320px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+
+.location-card:hover {
+    transform: translateZ(50px) translateY(-15px) rotateX(2deg);
+    box-shadow: 0 40px 80px rgba(0, 168, 168, 0.2);
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 220px;
+}
+
+.card-img-wrapper img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.location-card:hover img {
+    transform: scale(1.1);
+}
+
+.atmosphere-tag {
+    position: absolute;
+    bottom: 15px; right: 15px;
+    background: #ebe7b5; 
+    color: #333;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.card-info {
+    padding: 25px;
+    text-align: left;
+}
+
+.card-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hook {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+.reveal-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.location-card:hover .reveal-content {
+    max-height: 150px; 
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.fun-fact {
+    font-size: 13px;
+    color: #444;
+    font-style: italic;
+    border-left: 3px solid #00a8a8;
+    padding-left: 10px;
+}
+
+.blue-link-sentence {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff; 
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.blue-link-sentence:hover {
+    color: #00a8a8; 
+    text-decoration: underline;
+}
+
+
+.experience-section {
+    padding: 100px 20px;
+    background: url('/images/experience-bg.jpg') center/cover no-repeat fixed;
+    text-align: center;
+}
+.experience-header{
+  font-size: large;
+  color: black;
+
+
+}
+.experience-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+
+.filter-dropdown {
+    margin: 30px 0 60px;
+}
+
+.filter-dropdown select {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 2px solid #00a8a8;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.filter-dropdown select:hover {
+    box-shadow: 0 5px 15px rgba(0, 168, 168, 0.2);
+    transform: translateY(-2px);
+}
+
+.experience-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 60px 40px;
+    
+  
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.exp-card {
+    position: relative;
+    background: white;
+    padding: 40px 30px;
+    width: 320px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.4s ease;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.exp-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; 
+    transition: transform 0.6s ease;
+    z-index: -1;
+}
+
+
+.exp-card.stay::before { background-image: url('/images/accommodations.jpg'); }
+.exp-card.activity::before { background-image: url('/images/activities.jpg'); }
+.exp-card.food::before { background-image: url('/images/cuisine.jpg'); }
+
+.exp-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.exp-card:hover::before {
+    transform: scale(1.1);
+    opacity: 0.15;
+}
+
+.exp-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    
+}
+
+.btn-view {
+    margin-top: 25px;
+    padding: 10px 25px;
+    border: 2px solid #00a8a8;
+    background: transparent;
+    color: #00a8a8;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-view:hover {
+    background: #00a8a8;
+    color: white;
+}
+
+
+.map-section {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+}
+
+.map-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.map-header p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+.map-frame {
+    width: 100%;
+    max-width: 1100px; 
+    height: 500px;     
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border: 5px solid white; 
+    overflow: hidden;
+}
+
+#google-map-container {
+    height: 500px;
+    width: 100%;
+    border-radius: 20px;
+    z-index: 1; 
+}
+
+
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
+

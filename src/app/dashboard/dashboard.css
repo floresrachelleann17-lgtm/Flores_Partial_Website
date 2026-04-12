@@ -1,0 +1,149 @@
+/* 1. Background & Global Blur */
+.dashboard-container {
+    min-height: 100vh;
+    padding: 80px 20px;
+    background: url('/images/hero.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.welcome-card, .glass-panel {
+    position: relative;
+    z-index: 2;
+}
+
+/* 2. THE WELCOME CARD (The exact design from the picture) */
+.welcome-card {
+    background: white;
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    position: relative; /* Needed for floating elements */
+}
+
+/* Centralized Avatar */
+.profile-avatar {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-avatar i {
+    font-size: 4rem;
+    color: #00bcd4;
+}
+
+/* Floating Logout Button (Top Right of Box) */
+.inner-logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #21abab; /* Muted teal color from image */
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* The Elegant Serif Font */
+.welcome-text h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.2rem;
+    color: #222;
+    margin-top: 15px;
+}
+
+.welcome-text h1 span {
+    color: #00bcd4;
+    font-style: italic;
+}
+
+.welcome-text p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* 3. THE GLASS PANEL */
+.glass-panel {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.wishlist-header h2 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+}
+
+/* 4. THE EMPTY STATE BOX */
+.empty-prompt-card {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.empty-prompt-card i {
+    font-size: 3.5rem;
+    color: #00bcd4;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.empty-prompt-card h3 {
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+/* The Teal Button */
+.add-items-btn {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
